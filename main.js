@@ -1,5 +1,5 @@
 
-// Função que adiciona os números no Visor quando pressionado os botões
+// Função que adiciona os números no Visor quando pressiona os botões
 function calcNum(num) {
     if (typeof gvisor == 'undefined') {
        document.calcform.visor.value = '';
@@ -8,7 +8,7 @@ function calcNum(num) {
     gvisor = 1;
  }
  
- // Função que limpa a calculadora e todas as variáveis existentes.
+ // Função que limpa a calculadora 
  function calcLimpar() {
     document.calcform.visor.value = '';
     delete gvalor;
@@ -16,7 +16,7 @@ function calcNum(num) {
     delete gvisor;
  }
  
- // Função que executa as operações básicas da calculadora
+ // Função que executa as operações básicas 
  function calcOper(oper, valor1, valor2) {
     if (oper == "somar") {
        var valor = parseFloat(valor1) + parseFloat(valor2);
