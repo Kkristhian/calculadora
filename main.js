@@ -56,5 +56,4 @@ function calcNum(num) {
        gvalor = valor;
        goper = oper;
     }
- 
  }
