@@ -1,10 +1,10 @@
 
-//Css do visor da calculadora
+/*Css do visor da calculadora*/
 #visor {
     background-color: #bdffb4;
     text-align: right;
  }
- //Css da tabela
+ /*Css da tabela*/
  table {
     margin: 0 auto 0 auto;
  }
