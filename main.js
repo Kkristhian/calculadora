@@ -1,23 +1,6 @@
+// Função das operações básicas 
 
-// Função que adiciona os números no Visor quando pressiona os botões
-function calcNum(num) {
-    if (typeof gvisor == 'undefined') {
-       document.calcform.visor.value = '';
-    }
-    document.calcform.visor.value = document.calcform.visor.value + num;
-    gvisor = 1;
- }
- 
- // Função que limpa a calculadora 
- function calcLimpar() {
-    document.calcform.visor.value = '';
-    delete gvalor;
-    delete goper;
-    delete gvisor;
- }
- 
- // Função que executa as operações básicas 
- function calcOper(oper, valor1, valor2) {
+function calcOper(oper, valor1, valor2) {
     if (oper == "somar") {
        var valor = parseFloat(valor1) + parseFloat(valor2);
     } else {
@@ -31,11 +14,30 @@ function calcNum(num) {
           }
        }
     }
- 
     return(valor);
  }
  
+ // Função para limpa o visor da calculadora
+
+ function calcLimpar() {
+    document.calcform.visor.value = '';
+    delete gvalor;
+    delete goper;
+    delete gvisor;
+ }
+
+// Função que adiciona os números no Visor quando pressiona os botões
+
+function calcNum(num) {
+    if (typeof gvisor == 'undefined') {
+       document.calcform.visor.value = '';
+    }
+    document.calcform.visor.value = document.calcform.visor.value + num;
+    gvisor = 1;
+ }
+   
  // Função do algoritmo de "passagem" das ações do usuário
+ 
  function calcParse(oper) {
     var valor = document.calcform.visor.value;
     delete gvisor;
@@ -47,7 +49,6 @@ function calcNum(num) {
        delete gvalor;
        return(0);
     }
- 
     if (typeof gvalor != 'undefined') {
        gvalor = calcOper(goper, gvalor, valor);
        goper = oper;
