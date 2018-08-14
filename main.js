@@ -17,7 +17,7 @@ function calcOper(oper, valor1, valor2) {
     return(valor);
  }
  
- // Função para limpa o visor da calculadora
+ // Função para limpa o visor da calculadora - deleta valor, operação e visor
 
  function calcLimpar() {
     document.calcform.visor.value = '';
