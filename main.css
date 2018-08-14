@@ -1,38 +1,41 @@
 
 /*Css do visor da calculadora*/
 #visor {
-    background-color: #bdffb4;
+    background-color: #02f502;
     text-align: right;
  }
- /*Css da tabela*/
+ /*Css tabela*/
  table {
-    margin: 0 auto 0 auto;
+    margin: auto;
  }
  
  form fieldset {
     margin: 10px auto 10px auto;
-    width: 40%;
+    width: 1%;
     border: solid black 1px;
-    padding: 3%;
+    padding: 2%;
     margin-bottom: 10px;
  }
  
  form input {
     width: 100%;
-    border: solid #ccc 1px;
+    border: solid rgb(230, 8, 8) 1px;
     font-size: 11px;
     margin-bottom: 10px;
  }
  
  form input.num {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    background-color: silver;
+    color: white;
  }
  
  form input.oper {
     display: block;
-    width: 24px;
-    height: 24px;
-    background-color: #b2b2b2;
+    width: 26px;
+    height: 26px;
+    background-color: black;
+    color: white;
  }
