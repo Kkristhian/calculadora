@@ -1,4 +1,4 @@
-// Função das operações básicas 
+/*// Função das operações básicas 
 
 function calcOper(oper, valor1, valor2) {
     if (oper == "somar") {
@@ -57,4 +57,6 @@ function calcNum(num) {
        gvalor = valor;
        goper = oper;
     }
- }
+ }*/
+
+ 

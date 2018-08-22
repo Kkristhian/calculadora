@@ -1,4 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
 <html>
 <head>
    <title>Calculadora</title>
@@ -44,6 +47,103 @@
       </table>
    </fieldset>
 </form>
+
+</body>
+</html> -->
+
+
+
+<html>
+<body>
+	<form name="frm">
+
+	<table width="200" cellpadding="3" cellspacing="5">
+		<tr>
+			<td colspan="3" align="center"><input type="text" name="tela" value="0"></td>
+			<td><input type="reset" value="C"></td>
+			<td><input class="operacao" type="button" value="=" id="igual" name="igual"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" name="bt7" onclick="gravaBotao(7)"></td>
+			<td><input type="button" value="8" name="bt8" onclick="gravaBotao(8)"></td>
+			<td><input type="button" value="9" name="bt9" onclick="gravaBotao(9)"></td>
+			<td><input class="operacao" type="button" value="+" name="soma"></td>
+			<td><input class="operacao" type="button" value="-" name="menos"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" name="bt4" onclick="gravaBotao(4)"></td>
+			<td><input type="button" value="5" name="bt5" onclick="gravaBotao(5)"></td>
+			<td><input type="button" value="6" name="bt6" onclick="gravaBotao(6)"></td>
+			<td><input class="operacao" type="button" value="*" name="mult"></td>
+			<td><input class="operacao" type="button" value="/" name="dv"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" name="bt1" onclick="gravaBotao(1)"></td>
+			<td><input type="button" value="2" name="bt2" onclick="gravaBotao(2)"></td>
+			<td><input type="button" value="3" name="bt3" onclick="gravaBotao(3)"></td>
+			<td><input type="button" value="0" name="bt0" onclick="gravaBotao(0)"></td>
+			<td><input type="button" value="." id="ponto" name="ponto"></td>
+		</tr>
+	</table>
+	</form>
+
+<script type="text/javascript">
+	let total = 0;
+	let flag = false;
+	let op = "";	
+	function gravaBotao(digito) {
+		if (flag) {
+			document.frm.tela.value = digito;
+			flag = false;
+   		} else {
+			if (document.frm.tela.value == "0")
+				document.frm.tela.value = digito;
+			else
+				document.frm.tela.value += digito;
+   		}
+	}
+    // adicionando função aos operadores
+    let arrOp = Array.from(document.getElementsByClassName("operacao"));
+	arrOp.forEach(function(btOp) {
+		btOp.addEventListener("click", function() {
+			op2 = this.value;
+			if (document.frm.tela.value == ""){
+				document.frm.tela.value ="0"; 
+			} else {
+				if (!flag && (op != "=" || op == "")){
+					flag = true;
+					if ("+" == op)
+						total += parseFloat(document.frm.tela.value);
+					else if ( '-' == op )
+						total -= parseFloat(document.frm.tela.value);
+					else if ( '/' == op )
+						total /= parseFloat(document.frm.tela.value);
+					else if ( '*' == op )
+						total *= parseFloat(document.frm.tela.value);
+					else
+						total = parseFloat(document.frm.tela.value);
+						document.frm.tela.value = total;
+						op = op2;
+				}
+			}
+		});
+	});
+    // adicionando a função ao ponto
+    let ponto = document.getElementById("ponto");
+    ponto.addEventListener("click", function() {
+		let valor = document.frm.tela.value;
+		if (flag) {
+			valor = "0.";
+			flag = false;
+   		}
+		else {
+		if (valor.indexOf(".") == -1)
+			valor += ".";
+   		}
+		document.frm.tela.value = valor;
+	});
+	
+</script>
 
 </body>
 </html>
